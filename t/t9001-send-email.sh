@@ -2202,7 +2202,7 @@ test_translate_aliases '--translate-aliases gnus format' \
 	(define-mail-alias "chloe" "chloe@example.com")
 	EOF
 
-test_expect_success '--translate-aliases passes valid addresses through' '
+test_expect_success $PREREQ '--translate-aliases passes valid addresses through' '
 	cat >expect <<-\EOF &&
 	Other <o@example.com>
 	EOF
@@ -2213,7 +2213,7 @@ test_expect_success '--translate-aliases passes valid addresses through' '
 	test_cmp expect actual
 '
 
-test_expect_success '--translate-aliases passes unknown aliases through' '
+test_expect_success $PREREQ '--translate-aliases passes unknown aliases through' '
 	cat >expect <<-\EOF &&
 	blargh
 	EOF
